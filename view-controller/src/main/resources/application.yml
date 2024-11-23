@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: view-controller
+
+logging:
+  level:
+    org:
+      springframework:
+        data: DEBUG
+
+db:
+  host: 127.0.0.1
+  port: 5432
+  name: tutor_finder_db
+  user: postgres
+  password: postgres
