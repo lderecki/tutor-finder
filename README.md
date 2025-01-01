@@ -1,2 +1,2 @@
 # tutor-finder
-Tutor search microservice app
+Better project than [spring-microservices-demo](https://github.com/lderecki/spring-microservices-demo) where I mixed fully blocking and reactive features. Instead of upgrading previous project with `CompletableFuture<>` and `@Transactional` I decided to go 1 step further and build (almost) fully reactive stack. I used [PostgreSQL](https://www.postgresql.org/) database with [R2DBC](https://r2dbc.io/) API, but rest of API is reactive.
