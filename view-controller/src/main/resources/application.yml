@@ -5,8 +5,9 @@ spring:
 logging:
   level:
     org:
-      springframework:
-        data: DEBUG
+      springframework: INFO
+      springframework.security: INFO
+
 
 db:
   host: 127.0.0.1
@@ -14,3 +15,7 @@ db:
   name: tutor_finder_db
   user: postgres
   password: postgres
+
+jwt:
+  secretKey: m9sN9kRkJhEFlVCOp02sAh3G09IWY8krveQxnfyaHjY=
+  minutesValid: 5

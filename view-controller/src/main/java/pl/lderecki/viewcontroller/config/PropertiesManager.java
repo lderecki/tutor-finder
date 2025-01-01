@@ -22,4 +22,10 @@ public class PropertiesManager {
 
     @Value("${db.password}")
     private String dbPassword;
+
+    @Value("${jwt.secretKey}")
+    private String secretKey;
+
+    @Value("${jwt.minutesValid}")
+    private long minutesValid;
 }
