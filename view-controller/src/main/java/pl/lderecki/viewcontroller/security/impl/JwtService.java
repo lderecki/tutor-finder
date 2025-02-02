@@ -63,7 +63,7 @@ public class JwtService implements TokenService {
             List<Role> authorities = roles.stream().map(r -> new Role(null, r)).toList();
 
             UserDetails userDetails = new User(null, null, null, null, username, null,
-                    null, null, null, null, authorities);
+                    null, null, null, null, authorities, null, null);
 
             Authentication auth = new UsernamePasswordAuthenticationToken(userDetails,
                     token,

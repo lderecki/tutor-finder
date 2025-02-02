@@ -55,6 +55,12 @@ public class User implements UserDetails {
     private Boolean enabled;
 
     @Transient
-    private List<Role> authorities = new ArrayList<>();  //? extends GrantedAuthority
+    private List<Role> authorities = new ArrayList<>();
+
+    @Transient
+    private List<TeachingSubject> teachingSubjects = new ArrayList<>();
+
+    @Transient
+    private List<AvailabilityPeriod> availabilityPeriods = new ArrayList<>();
 
 }

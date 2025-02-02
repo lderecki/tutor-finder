@@ -18,4 +18,4 @@ db:
 
 jwt:
   secretKey: m9sN9kRkJhEFlVCOp02sAh3G09IWY8krveQxnfyaHjY=
-  minutesValid: 5
+  minutesValid: 9999

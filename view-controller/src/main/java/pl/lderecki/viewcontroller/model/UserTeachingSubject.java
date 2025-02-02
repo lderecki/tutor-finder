@@ -15,8 +15,8 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table("user_role")
-public class UserRole {
+@Table("user_teaching_subject")
+public class UserTeachingSubject {
 
     @Transient
     @Id
@@ -25,8 +25,6 @@ public class UserRole {
     @Column("user_id")
     private UUID userId;
 
-
-    @Column("role_id")
-    private Integer roleId;
-
+    @Column("teaching_subject_id")
+    private Integer teachingSubjectId;
 }

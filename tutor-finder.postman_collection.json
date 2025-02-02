@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "58cdcc20-377e-4b51-bd8b-6bb4c7212fdf",
+		"name": "tutor-finder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11037901"
+	},
+	"item": [
+		{
+			"name": "view-controller",
+			"item": [
+				{
+					"name": "generate_token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"jkowalski\",\r\n    \"password\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/auth/generate_token",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"auth",
+								"generate_token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-actuator",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0Iiwicm9sZXMiOlsiVEVTVCJdLCJpYXQiOjE3MzU1MDU4MTMsImV4cCI6MTczNTUwNjExM30.UBESpAXBc6g7Lxr8cVjOZQmz0S6iowjBOgxSFxMRUEU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/actuator",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"actuator"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh_token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0Iiwicm9sZXMiOlsiVEVTVCJdLCJpYXQiOjE3MzU2MDk0MzgsImV4cCI6MTczNTYwOTczOH0.f16kIVo7SUCH1e5VuXazfsvGzkC5km3V6sDJwXgjJ5M",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/auth/refresh_token",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"auth",
+								"refresh_token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jan\",\r\n    \"lastName\": \"Kowalski\",\r\n    \"email\": \"jan.kowalski@gmail.com\",\r\n    \"username\": \"jkowalski\",\r\n    \"password\": \"jkowalski123\",\r\n    \"roleIds\": [\r\n\t    1\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/auth/register",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-tutor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqa293YWxza2kiLCJyb2xlcyI6WyJTVFVERU5UIl0sImlhdCI6MTczODM3MjgyNiwiZXhwIjoxNzM4OTcyNzY2fQ.xYbZ_wSCbTeIZB8X-MX66Axv1loZK0JB2GFZusp5nHo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/tutor/53c7f601-029e-9bb0-8a0e-ed09aa84bdc2",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"tutor",
+								"53c7f601-029e-9bb0-8a0e-ed09aa84bdc2"
+							],
+							"query": [
+								{
+									"key": "nickname",
+									"value": "test",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find-tutor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqa293YWxza2kiLCJyb2xlcyI6WyJTVFVERU5UIl0sImlhdCI6MTczODM3MjgyNiwiZXhwIjoxNzM4OTcyNzY2fQ.xYbZ_wSCbTeIZB8X-MX66Axv1loZK0JB2GFZusp5nHo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/tutor?nickname=test&subjectIds=1&dateFrom=2025-02-19T09:23:54%2B01:00&dateTo=2025-02-19T10:23:54%2B01:00",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"tutor"
+							],
+							"query": [
+								{
+									"key": "nickname",
+									"value": "test"
+								},
+								{
+									"key": "subjectIds",
+									"value": "1"
+								},
+								{
+									"key": "dateFrom",
+									"value": "2025-02-19T09:23:54%2B01:00"
+								},
+								{
+									"key": "dateTo",
+									"value": "2025-02-19T10:23:54%2B01:00"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"// pm.sendRequest({\r",
+					"//     url: pm.environment.get(\"base-url\"),\r",
+					"//     method: 'POST',\r",
+					"//     header: {\r",
+					"//         'content-type': 'application/json'\r",
+					"//     },\r",
+					"//     body: {\r",
+					"//         mode: 'raw',\r",
+					"//         raw: JSON.stringify({ username: 'jkowalski',\r",
+					"//                                 password: 'test' })\r",
+					"//     }\r",
+					"// }, (err, res) => pm.collectionVariables.set(\"TOKEN\", res.json()['token']));\r",
+					"\r",
+					"try {\r",
+					"    const response = await pm.sendRequest({\r",
+					"        url: 'http://127.0.0.1:8080/auth/generate_token',\r",
+					"        method: \"POST\",\r",
+					"        header: {\r",
+					"            'content-type': 'application/json'\r",
+					"        },\r",
+					"        body: {\r",
+					"         mode: 'raw',\r",
+					"         raw: JSON.stringify({ username: 'jkowalski',\r",
+					"                                 password: 'test' })\r",
+					"        }\r",
+					"    }\r",
+					"    );\r",
+					"\r",
+					"    pm.collectionVariables.set(\"TOKEN\", response.json().token);\r",
+					"} catch (err) {\r",
+					"    console.error(err);\r",
+					"}\r",
+					"\r",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "TOKEN",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
