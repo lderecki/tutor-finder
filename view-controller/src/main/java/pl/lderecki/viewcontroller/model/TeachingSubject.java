@@ -5,28 +5,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
-
-import java.util.UUID;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table("user_role")
-public class UserRole {
-
-    @Transient
+@Table("teaching_subject")
+public class TeachingSubject {
     @Id
+    @Column("id")
     private Integer id;
 
-    @Column("user_id")
-    private UUID userId;
+    @Column("name")
+    private String name;
 
-
-    @Column("role_id")
-    private Integer roleId;
-
+    @Column("description")
+    private String description;
 }

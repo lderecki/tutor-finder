@@ -95,3 +95,94 @@ TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.user_role
     OWNER to postgres;
+	
+------------------------------------------------------------------------------
+
+CREATE SEQUENCE IF NOT EXISTS public.teaching_subject_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.teaching_subject_id_seq
+    OWNED BY public.teaching_subject.id;
+
+ALTER SEQUENCE public.teaching_subject_id_seq
+    OWNER TO postgres;
+
+CREATE TABLE IF NOT EXISTS public.teaching_subject
+(
+    id integer NOT NULL DEFAULT nextval('teaching_subject_id_seq'::regclass),
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    description character varying COLLATE pg_catalog."default",
+    CONSTRAINT teaching_subject_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.teaching_subject
+    OWNER to postgres;
+	
+------------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS public.user_teaching_subject
+(
+    user_id uuid NOT NULL,
+    teaching_subject_id integer NOT NULL,
+    CONSTRAINT user_teaching_subject_pkey PRIMARY KEY (user_id, teaching_subject_id),
+    CONSTRAINT fk_teaching_subject_user_teaching_subject FOREIGN KEY (teaching_subject_id)
+        REFERENCES public.teaching_subject (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fk_teaching_subject_user_user FOREIGN KEY (user_id)
+        REFERENCES public.app_user (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.user_teaching_subject
+    OWNER to postgres;
+	
+------------------------------------------------------------------------------
+
+INSERT INTO public.role(
+	name)
+	VALUES ('TUTOR');
+	
+INSERT INTO public.role(
+	name)
+	VALUES ('STUDENT');
+	
+------------------------------------------------------------------------------
+
+CREATE SEQUENCE IF NOT EXISTS public.availability_period_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.availability_period_id_seq
+    OWNED BY public.availability_period.id;
+
+ALTER SEQUENCE public.availability_period_id_seq
+    OWNER TO postgres;
+
+CREATE TABLE IF NOT EXISTS public.availability_period
+(
+    id bigint NOT NULL DEFAULT nextval('availability_period_id_seq'::regclass),
+    period_start timestamp with time zone NOT NULL,
+    period_end timestamp with time zone NOT NULL,
+    user_id uuid NOT NULL,
+    CONSTRAINT availability_period_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.availability_period
+    OWNER to postgres;
+
+------------------------------------------------------------------------------

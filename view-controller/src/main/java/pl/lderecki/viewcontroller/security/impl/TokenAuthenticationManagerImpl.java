@@ -59,7 +59,7 @@ public class TokenAuthenticationManagerImpl implements TokenAuthenticationManage
     @Override
     public Mono<UserResponse> createUser(UserRequest userRequest) {
         return Mono.just(userRequest).map(u -> new User(null, u.firstName(), u.lastName(), u.email(), u.username(),
-                u.password(), true, true, true, true, userRequest.roleIds().stream().map(id -> new Role(id, null)).toList()))
+                u.password(), true, true, true, true, userRequest.roleIds().stream().map(id -> new Role(id, null)).toList(), null, null))
                 .flatMap(userDetailsService::save)
                 .map(user -> new UserResponse((User) user));
     }

@@ -5,28 +5,29 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.time.ZonedDateTime;
 import java.util.UUID;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-@Table("user_role")
-public class UserRole {
+@AllArgsConstructor
+@Table("availability_period")
+public class AvailabilityPeriod {
 
-    @Transient
     @Id
-    private Integer id;
+    @Column("id")
+    private Long id;
+
+    @Column("period_start")
+    private ZonedDateTime periodStart;
+
+    @Column("period_end")
+    private ZonedDateTime periodEnd;
 
     @Column("user_id")
     private UUID userId;
-
-
-    @Column("role_id")
-    private Integer roleId;
-
 }

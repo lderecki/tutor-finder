@@ -29,6 +29,7 @@ public class SecurityConfig {
                 .authorizeExchange(exchange -> exchange
                                                 .pathMatchers("/auth/refresh_token").authenticated()
                                                 .pathMatchers("/auth/**").permitAll()
+                                                .pathMatchers("/tutor/**").hasAuthority("STUDENT")
                                                 .pathMatchers("/actuator/**").hasAuthority("TEST")
                                                 .anyExchange().authenticated()
                 )
