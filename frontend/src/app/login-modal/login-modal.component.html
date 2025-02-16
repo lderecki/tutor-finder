@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>{{'LOGIN' | translate}}</h2>
+<mat-dialog-content>
+  <form [formGroup]="loginForm" class="modal-form">   <!-- (ngSubmit)="onSubmit()"-->
+    <mat-form-field>
+      <mat-label>{{'USERNAME' | translate}}</mat-label>
+      <input matInput formControlName="username" type="text"/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{'PASSWORD' | translate}}</mat-label>
+      <input matInput formControlName="password" type="password"/>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions class="actions">
+  <button mat-button type="button" (click)="onClose()">{{'CLOSE' | translate}}</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">{{'LOGIN' | translate}}</button>
+</mat-dialog-actions>
+
