@@ -1,6 +1,10 @@
 {
-  "FIRST_NAME": "Imię",
-  "LAST_NAME": "Nazwisko",
-  "AGE": "Wiek",
-  "POSITION": "Stanowisko"
+  "LOGIN": "Zaloguj",
+  "USERNAME": "Nazwa użytkownika",
+  "PASSWORD": "Hasło",
+  "CLOSE": "Zamknij",
+  "TUTOR_VIEW": "Widok korepetytora",
+  "STUDENT_VIEW": "Widok ucznia",
+  "ACCOUNT": "Konto",
+  "ACCOUNT_DETAILS": "Szczegóły konta"
 }

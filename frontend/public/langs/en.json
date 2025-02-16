@@ -1,6 +1,10 @@
 {
-  "FIRST_NAME": "First name",
-  "LAST_NAME": "Last name",
-  "AGE": "Age",
-  "POSITION": "Position"
+  "LOGIN": "Login",
+  "USERNAME": "Username",
+  "PASSWORD": "Password",
+  "CLOSE": "Close",
+  "TUTOR_VIEW": "Tutor wiev",
+  "STUDENT_VIEW": "Student view",
+  "ACCOUNT": "Account",
+  "ACCOUNT_DETAILS": "Account details"
 }

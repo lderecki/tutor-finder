@@ -1,0 +1,22 @@
+<mat-toolbar>
+  <span>Tutor Finder</span>
+  <span class="toolbar-spacer"></span>
+  <span class="btn-span">
+    <a mat-fab extended routerLink="/tutor-view" routerLinkActive="active-link">
+      <mat-icon fontSet="material-icons-outlined">record_voice_over</mat-icon>
+      {{'TUTOR_VIEW' | translate}}
+    </a>
+    <a mat-fab extended routerLink="/student-view" routerLinkActive="active-link">
+      <mat-icon fontSet="material-icons-outlined">school</mat-icon>
+      {{'STUDENT_VIEW' | translate}}
+    </a>
+    <button mat-fab extended [matMenuTriggerFor]="menu">
+      <mat-icon fontSet="material-icons-outlined">account_circle</mat-icon>
+      {{'ACCOUNT' | translate}}
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>{{'ACCOUNT_DETAILS' | translate}}</button>
+      <button mat-menu-item (click)="openLoginModal()">{{'LOGIN' | translate}}</button>
+    </mat-menu>
+</span>
+</mat-toolbar>
